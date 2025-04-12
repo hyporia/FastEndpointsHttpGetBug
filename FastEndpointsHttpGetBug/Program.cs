@@ -1,5 +1,5 @@
 using FastEndpoints;
-using System.Reflection;
+using FastEndpointsHttpGetBug;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.Services.AddFastEndpoints(x => x.Assemblies = [Assembly.GetExecutingAssembly()]);
+builder.Services.AddFastEndpoints(x => x.Assemblies = [typeof(GetWeather).Assembly]);
 builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();

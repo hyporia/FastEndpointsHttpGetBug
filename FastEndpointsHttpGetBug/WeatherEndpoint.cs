@@ -1,6 +1,8 @@
 using FastEndpoints;
 using System.ComponentModel;
 
+namespace FastEndpointsHttpGetBug;
+
 [Description("Get weather.")]
 public class WeatherEndpoint : Endpoint<GetWeather, GetWeatherResponse>
 {
